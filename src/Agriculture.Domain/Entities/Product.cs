@@ -17,7 +17,10 @@ namespace Agriculture.Domain.Entities
 
         public int CartId { get; set; }
         public Cart Cart { get; set; }
-        public Farm Farm { get; set; }  
+        public Farm Farm { get; set; } 
+        
+        public int CotegoryId { get; set;}
+        public Cotegory Cotegory { get; set; }
 
     }
 }
