@@ -23,7 +23,6 @@ namespace Agriculture.Aplication.UseCases.ShopCase.Handlers
         {
             var shop = new Shop()
             {
-                Name = request.Name,
                 Adress = request.Adress,
                 Phone = request.Phone,
                 Email = request.Email,
