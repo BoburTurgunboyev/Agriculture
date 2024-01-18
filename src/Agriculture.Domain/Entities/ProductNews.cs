@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace Agriculture.Domain.Entities
 {
-    public class Cotegory
+    public class ProductNews
     {
-        public int Id { get; set; } 
-        public string Name { get; set; }
+        public int Id { get; set; }
         public string Image { get; set; }
+        public string Vitamin { get; set; }
+        public string VitaminDescription { get; set; }
 
-        public ICollection<Product> Products { get; set; }
-       
+
     }
 }
