@@ -24,7 +24,7 @@ namespace Agriculture.Api.Controllers
         {
             var shop = new CreateShopCommand()
             {
-                Name = shopdto.Name,
+               
                 Adress = shopdto.Adress,
                 Phone = shopdto.Phone,
                 Email = shopdto.Email,
