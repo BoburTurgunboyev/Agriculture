@@ -10,9 +10,9 @@ namespace Agriculture.Domain.Entities
     public class Cart
     {
         public int Id { get; set; }
-        public int Howmany { get; set; }
+        public int Quentity { get; set; }
         public decimal SumTotal { get; set; }
-        public ICollection<Product> Products { get; set; }
+        public Product Product { get; set; }
 
     }
 }
