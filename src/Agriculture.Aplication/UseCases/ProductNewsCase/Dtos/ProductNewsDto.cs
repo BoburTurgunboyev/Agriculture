@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Agriculture.Aplication.UseCases.ProductNewsCase.Dtos
 {
-    internal class ProductNewsDto
+    public class ProductNewsDto
     {
         public string Image { get; set; }
         public string Vitamin { get; set; }
