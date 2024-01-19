@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Agriculture.Aplication.UseCases.ProductCase.Dtos
 {
-    internal class ProductDto
+    public class ProductDto
     {
         public string Name { get; set; }
         public string Image { get; set; }
