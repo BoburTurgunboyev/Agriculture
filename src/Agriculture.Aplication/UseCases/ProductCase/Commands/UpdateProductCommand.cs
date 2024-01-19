@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Agriculture.Aplication.UseCases.ProductCase.Dtos;
+using MediatR;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +8,8 @@ using System.Threading.Tasks;
 
 namespace Agriculture.Aplication.UseCases.ProductCase.Commands
 {
-    internal class UpdateProductCommand
+    public class UpdateProductCommand :ProductDto,IRequest<bool>
     {
+        public int Id { get; set; } 
     }
 }
