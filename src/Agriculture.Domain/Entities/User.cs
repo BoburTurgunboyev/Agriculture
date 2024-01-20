@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Agriculture.Domain.Entities
 {
-    internal class User
+    public class User
     {
         public int Id { get; set; }
         public string FullName { get; set; }
