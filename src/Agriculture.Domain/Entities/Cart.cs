@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Agriculture.Domain.Entities
 {
-    public class Cart
+    internal class Cart
     {
         public int Id { get; set; }
         public int Quentity { get; set; }
