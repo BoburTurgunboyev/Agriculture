@@ -19,7 +19,7 @@ namespace Agriculture.Api.Controllers
         }
 
         [HttpPost]
-        public async ValueTask<IActionResult> CreateProductNews(CreateProductNewsCommand createProductNewsCommand)
+        public async ValueTask<IActionResult> CreateProductNews([FromForm]CreateProductNewsCommand createProductNewsCommand)
         { 
             var result = await _mediator.Send(createProductNewsCommand);
             return Ok("Created");
