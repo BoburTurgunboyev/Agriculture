@@ -22,10 +22,18 @@ namespace Agriculture.Aplication.UseCases.ProductServiceCase.Handlers
         public async Task<bool> Handle(UpdateProductServiceCommand request, CancellationToken cancellationToken)
         {
             var res = await _appDbContext.productsService.FirstOrDefaultAsync(x=>x.Id==request.Id);
-            if (res!=null)
+            if (res is null)
             {
                 return false;
             }
+            
+            res.AgriculturalServices=request.AgriculturalServices;
+            res.DairyProducts=request.DairyProducts;
+            res.DeliveryServices=request.DeliveryServices;  
+            res.OrganicProducts=request.OrganicProducts;
+            res.FreshVegetables=request.FreshVegetables;
+            res.StoreServices=request.StoreServices;    
+            res.ProductId=request.ProductId;
 
             _appDbContext.productsService.Update(res);
             var result = await _appDbContext.SaveChangesAsync(cancellationToken);
