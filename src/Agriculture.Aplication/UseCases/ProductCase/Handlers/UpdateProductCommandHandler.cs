@@ -30,6 +30,7 @@ namespace Agriculture.Aplication.UseCases.ProductCase.Handlers
             res.Name = request.Name;    
             res.Image = request.Image;
             res.Price = request.Price;
+            res.CartId = request.CartId;    
 
             _appDbContext.products.Update(res);
             var result = await _appDbContext.SaveChangesAsync(cancellationToken);
