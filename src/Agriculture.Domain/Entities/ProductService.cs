@@ -15,6 +15,7 @@ namespace Agriculture.Domain.Entities
         public string AgriculturalServices { get; set; }
         public string OrganicProducts { get; set; }
         public string FreshVegetables { get; set; }
+        public int ProductId { get; set; }
         public Product Product { get; set; }
     }
 }
