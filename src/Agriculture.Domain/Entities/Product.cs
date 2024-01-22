@@ -8,9 +8,7 @@ namespace Agriculture.Domain.Entities
         public string Name { get; set; }
         public string Image { get; set; }
         public decimal Price { get; set; }
-
-        public int CartId { get; set; }
-        public Cart Cart { get; set; }
+        public ICollection<Cart> Carts { get; set; }
         public ICollection<ProductService> ProductServices {  get; set; } 
 
         
