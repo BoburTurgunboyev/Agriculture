@@ -8,9 +8,12 @@ using System.Threading.Tasks;
 
 namespace Agriculture.Aplication.UseCases.ShopCase.Commands
 {
-    public class UpdateShopCommand :ShopDto,IRequest<bool>
+    public class UpdateShopCommand :IRequest<bool>
     {
         public int Id { get; set; }
+        public string Email { get; set; }
+        public string Phone { get; set; }
+        public string Address { get; set; }
 
     }
 }
