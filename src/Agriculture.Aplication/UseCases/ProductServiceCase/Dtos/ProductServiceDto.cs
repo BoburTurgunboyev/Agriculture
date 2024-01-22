@@ -14,5 +14,6 @@ namespace Agriculture.Aplication.UseCases.ProductServiceCase.Dtos
         public string AgriculturalServices { get; set; }
         public string OrganicProducts { get; set; }
         public string FreshVegetables { get; set; }
+        public int ProductId { get; set; }
     }
 }
