@@ -24,7 +24,8 @@ namespace Agriculture.Aplication.UseCases.CartCase.Handlers
             var cart = new Cart()
             {
                 Quentity = request.Quentity,
-                SumTotal = request.SumTotal
+                SumTotal = request.SumTotal,
+                ProductId = request.ProductId,
             };
             await _appDbContext.carts.AddAsync(cart);
             var res = await _appDbContext.SaveChangesAsync(cancellationToken);
