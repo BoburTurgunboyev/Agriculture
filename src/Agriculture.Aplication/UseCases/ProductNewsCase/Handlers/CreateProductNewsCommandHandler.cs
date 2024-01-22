@@ -1,4 +1,5 @@
 ﻿using Agriculture.Aplication.Absreaction;
+using Agriculture.Aplication.FileSercives.ITTradeSoft.Application.FileServices;
 using Agriculture.Aplication.UseCases.ProductNewsCase.Commands;
 using Agriculture.Domain.Entities;
 using MediatR;
@@ -13,17 +14,20 @@ namespace Agriculture.Aplication.UseCases.ProductNewsCase.Handlers
     public class CreateProductNewsCommandHandler : IRequestHandler<CreateProductNewsCommand, bool>
     {
         private readonly IAppDbContext _appDbContext;
+        private readonly IFileService _fileService;
 
-        public CreateProductNewsCommandHandler(IAppDbContext appDbContext)
+        public CreateProductNewsCommandHandler(IAppDbContext appDbContext, IFileService fileService)
         {
             _appDbContext = appDbContext;
+            _fileService = fileService;
         }
 
         public async Task<bool> Handle(CreateProductNewsCommand request, CancellationToken cancellationToken)
         {
+            string productnewsimage = await _fileService.UploadImageAsync(request.Image);
             var res = new ProductNews() 
             {
-                Image = request.Image,
+                Image = productnewsimage,
                 Vitamin=request.Vitamin,
                 VitaminDescription=request.VitaminDescription
             };
