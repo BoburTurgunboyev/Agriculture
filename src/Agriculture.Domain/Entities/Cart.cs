@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Text;
@@ -12,7 +13,8 @@ namespace Agriculture.Domain.Entities
         public int Id { get; set; }
         public int Quentity { get; set; }
         public decimal SumTotal { get; set; }
-        public Product Product { get; set; }
+
+        public ICollection<Product> Products { get; set; }
 
     }
 }
