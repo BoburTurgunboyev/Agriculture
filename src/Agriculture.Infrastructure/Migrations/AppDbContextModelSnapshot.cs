@@ -29,6 +29,9 @@ namespace Agriculture.Infrastructure.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<int>("ProductId")
+                        .HasColumnType("int");
+
                     b.Property<int>("Quentity")
                         .HasColumnType("int");
 
@@ -36,6 +39,8 @@ namespace Agriculture.Infrastructure.Migrations
                         .HasColumnType("decimal(18,2)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("ProductId");
 
                     b.ToTable("carts");
                 });
@@ -47,9 +52,6 @@ namespace Agriculture.Infrastructure.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<int>("CartId")
-                        .HasColumnType("int");
 
                     b.Property<string>("Image")
                         .IsRequired()
@@ -63,8 +65,6 @@ namespace Agriculture.Infrastructure.Migrations
                         .HasColumnType("decimal(18,2)");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("CartId");
 
                     b.ToTable("products");
                 });
@@ -186,15 +186,15 @@ namespace Agriculture.Infrastructure.Migrations
                     b.ToTable("users");
                 });
 
-            modelBuilder.Entity("Agriculture.Domain.Entities.Product", b =>
+            modelBuilder.Entity("Agriculture.Domain.Entities.Cart", b =>
                 {
-                    b.HasOne("Agriculture.Domain.Entities.Cart", "Cart")
-                        .WithMany("Products")
-                        .HasForeignKey("CartId")
+                    b.HasOne("Agriculture.Domain.Entities.Product", "Product")
+                        .WithMany("Carts")
+                        .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Cart");
+                    b.Navigation("Product");
                 });
 
             modelBuilder.Entity("Agriculture.Domain.Entities.ProductService", b =>
@@ -208,13 +208,10 @@ namespace Agriculture.Infrastructure.Migrations
                     b.Navigation("Product");
                 });
 
-            modelBuilder.Entity("Agriculture.Domain.Entities.Cart", b =>
-                {
-                    b.Navigation("Products");
-                });
-
             modelBuilder.Entity("Agriculture.Domain.Entities.Product", b =>
                 {
+                    b.Navigation("Carts");
+
                     b.Navigation("ProductServices");
                 });
 #pragma warning restore 612, 618
