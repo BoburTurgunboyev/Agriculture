@@ -28,7 +28,9 @@ namespace Agriculture.Aplication.UseCases.ProductServiceCase.Handlers
                 DeliveryServices = request.DeliveryServices,
                 AgriculturalServices = request.AgriculturalServices,
                 OrganicProducts = request.OrganicProducts,
-                FreshVegetables = request.FreshVegetables
+                FreshVegetables = request.FreshVegetables,
+                ProductId = request.ProductId,
+                
             };
             _appDbContext.productsService.Add(res);
             var result = await _appDbContext.SaveChangesAsync(cancellationToken);
