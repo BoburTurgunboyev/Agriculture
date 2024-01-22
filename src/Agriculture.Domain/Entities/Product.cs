@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Agriculture.Domain.Entities
 {
@@ -12,13 +8,13 @@ namespace Agriculture.Domain.Entities
         public string Name { get; set; }
         public string Image { get; set; }
         public decimal Price { get; set; }
-        public Cart Cart { get; set; }
-        public ProductService ProductService { get; set; }
 
-     
-  
+        public int CartId { get; set; }
+        public Cart Cart { get; set; }
+        public ICollection<ProductService> ProductServices {  get; set; } 
+
         
-     
+
 
     }
 }
