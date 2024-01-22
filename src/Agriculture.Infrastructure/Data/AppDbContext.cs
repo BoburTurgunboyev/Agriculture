@@ -18,6 +18,11 @@ namespace Agriculture.Infrastructure.Data
         }
 
         public DbSet<Shop> shops { get; set; }
+        public DbSet<Cart> carts { get; set; }
+        public DbSet<Product> products { get; set; }
+        public DbSet<ProductNews> productsNews { get; set; }
+        public DbSet<ProductService> productsService { get; set; }
+        public DbSet<User> users { get ; set; }
 
         async ValueTask<int> IAppDbContext.SaveChangesAsync(CancellationToken cancellationToken)
         {
