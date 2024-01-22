@@ -15,6 +15,7 @@ namespace Agriculture.Aplication.Absreaction
         public DbSet<Product> products { get; set; } 
         public DbSet<ProductNews> productsNews { get; set; }
         public DbSet<ProductService> productsService { get; set; }  
+        public DbSet<User> users { get; set; }  
         public ValueTask<int> SaveChangesAsync(CancellationToken cancellationToken);
     }
 }
