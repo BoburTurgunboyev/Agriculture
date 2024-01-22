@@ -13,8 +13,9 @@ namespace Agriculture.Domain.Entities
         public int Id { get; set; }
         public int Quentity { get; set; }
         public decimal SumTotal { get; set; }
-
-        public ICollection<Product> Products { get; set; }
+        public int ProductId {  get; set; }
+        public Product Product { get; set; }
+       
 
     }
 }
