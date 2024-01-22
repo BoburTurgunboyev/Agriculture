@@ -10,5 +10,6 @@ namespace Agriculture.Aplication.UseCases.CartCase.Dtos
     {
         public int Quentity { get; set; }
         public decimal SumTotal { get; set; }
+        public int ProductId { get; set; }
     }
 }
