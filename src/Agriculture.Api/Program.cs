@@ -1,10 +1,11 @@
 using Agriculture.Aplication;
+using Agriculture.Aplication.FileSercives.ITTradeSoft.Application.FileServices;
 using Agriculture.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-
+builder.Services.AddScoped<IFileService, FileService>();   
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowSpecificOrigin",
