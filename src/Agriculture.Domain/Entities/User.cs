@@ -13,7 +13,5 @@ namespace Agriculture.Domain.Entities
         public string Image {  get; set; }
         public string Job { get; set; }
 
-        
-
     }
 }
