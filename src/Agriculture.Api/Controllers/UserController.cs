@@ -21,7 +21,7 @@ namespace Agriculture.Api.Controllers
 
         [HttpPost]
 
-        public async ValueTask<IActionResult> CreateUser( CreateUserCommand createUserCommand)
+        public async ValueTask<IActionResult> CreateUser([FromForm] CreateUserCommand createUserCommand)
         {
             var result = await _mediator.Send(createUserCommand);
             return Ok("Created");
