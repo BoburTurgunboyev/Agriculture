@@ -1,4 +1,5 @@
 ﻿using Agriculture.Aplication.Absreaction;
+using Agriculture.Aplication.FileSercives.ITTradeSoft.Application.FileServices;
 using Agriculture.Aplication.UseCases.UserCase.Commands;
 using Agriculture.Domain.Entities;
 using MediatR;
@@ -13,18 +14,20 @@ namespace Agriculture.Aplication.UseCases.UserCase.Handlers
     public class CreateUserCommandHandler : IRequestHandler<CreateUserCommand, bool>
     {
         private readonly IAppDbContext _appDbContext;
-
-        public CreateUserCommandHandler(IAppDbContext appDbContext)
+        private readonly IFileService _fileService;
+        public CreateUserCommandHandler(IAppDbContext appDbContext, IFileService fileService)
         {
             _appDbContext = appDbContext;
+            _fileService = fileService;
         }
 
         public async Task<bool> Handle(CreateUserCommand request, CancellationToken cancellationToken)
         {
+            string userimage = await _fileService.UploadImageAsync(request.Image);
             var user = new User()
             {
                 FullName=request.FullName,
-                Image=request.Image,
+                Image=userimage,
                 Job=request.Job,
             };
 
