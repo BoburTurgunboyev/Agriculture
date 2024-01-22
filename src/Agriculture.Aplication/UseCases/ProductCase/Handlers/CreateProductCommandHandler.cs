@@ -2,11 +2,6 @@
 using Agriculture.Aplication.UseCases.ProductCase.Commands;
 using Agriculture.Domain.Entities;
 using MediatR;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Agriculture.Aplication.UseCases.ProductCase.Handlers
 {
@@ -25,7 +20,8 @@ namespace Agriculture.Aplication.UseCases.ProductCase.Handlers
             {
                 Name = request.Name,
                 Image = request.Image,
-                Price = request.Price
+                Price = request.Price,
+                CartId = request.CartId,
             };
 
             _appDbContext.products.Add(product);
