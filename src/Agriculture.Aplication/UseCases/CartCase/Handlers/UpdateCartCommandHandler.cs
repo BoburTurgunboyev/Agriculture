@@ -29,6 +29,8 @@ namespace Agriculture.Aplication.UseCases.CartCase.Handlers
 
             res.Quentity=request.Quentity;
             res.SumTotal = request.SumTotal;
+            res.ProductId = request.ProductId;
+           
 
             _appDbContext.carts.Update(res);
             var result = await _appDbContext.SaveChangesAsync(cancellationToken);
